@@ -2,24 +2,38 @@
   "name": "markdown-files-with-date",
 	"displayName": "markdown-files-with-date",
 	"description": "Add markdown files with the current date as a prefix",
+	"publisher": "dtgoitia",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.57.0"
 	},
+	"repository": {
+    "url": "https://github.com/dtgoitia/vscode-markdown-files-with-date.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dtgoitia/vscode-markdown-files-with-date/issues"
+  },
 	"categories": [
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:markdown-files-with-date.helloWorld"
+    "onStartupFinished"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "markdown-files-with-date.helloWorld",
-				"title": "Hello World"
+				"command": "markdown-files-with-date.addFileWithTodayDate",
+				"title": "New meeting file"
 			}
-		]
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "markdown-files-with-date.addFileWithTodayDate"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run package",
